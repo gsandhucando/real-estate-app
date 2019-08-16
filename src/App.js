@@ -3,13 +3,13 @@ import Header from './components/Header';
 import "./scss/App.scss";
 import Filter from './components/Filter';
 import Listings from './components/Listings';
-// import listingData from './data/listingData';
+import listingData from './data/listingData';
 
 const App = () => {
-	// let [name, setName] = useState('sonu');
-	// let [data, setData] = useState(listingData);
+	let [name, setName] = useState('sonu');
+	let [data, setData] = useState(listingData);
 
-	// console.log(data);
+	console.log(data);
 
 	return (
 		<div>

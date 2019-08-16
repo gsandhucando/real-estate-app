@@ -34,19 +34,19 @@ const Filter = () => {
 				</div>
 				<div className="filters extras">
 					<span className="title">Extras</span>
-					<label for="extras">
+					<label className="extras">
 						<span>Elevators</span>
 						<input name="extras" value="elevator" type="checkbox" />
 					</label>
-					<label for="extras">
+					<label className="extras">
 						<span>Swimming Pool</span>
 						<input name="extras" value="swimming-pool" type="checkbox" />
 					</label>
-					<label for="extras">
+					<label className="extras">
 						<span>Finished Basement</span>
 						<input name="extras" value="finished-basement" type="checkbox" />
 					</label>
-					<label for="extras">
+					<label className="extras">
 						<span>Gym</span>
 						<input name="extras" value="gym" type="checkbox" />
 					</label>
