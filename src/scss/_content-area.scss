@@ -9,7 +9,7 @@
   background: $grey;
   width: 30%;
   max-width: 300px;
-  display: inline-block;
+  // display: inline-block;
   float: left;
   .inside{
     padding: 20px;
@@ -63,7 +63,7 @@
 #listings{
   width: 70%;
   float: left;
-  display: inline-block;
+  // display: inline-block;
   padding: 15px;
   background: $offwhite;
 
@@ -114,19 +114,15 @@
 
       border-radius: 5px;
       -webkit-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
-      -moz-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
       box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
     }
     .listing-img{
       color: white;
       padding: 15px;
       position: relative;
-      background: url("https://s-ec.bstatic.com/images/hotel/max1024x768/180/180198842.jpg") no-repeat center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      min-height: 200px;
+      // background: url("https://s-ec.bstatic.com/images/hotel/max1024x768/180/180198842.jpg") no-repeat center center;
+      // background-size: cover;
+      // min-height: 200px;
       -webkit-border-top-left-radius: 5px;
       -webkit-border-top-right-radius: 5px;
       -moz-border-radius-topleft: 5px;
@@ -143,13 +139,18 @@
       }
       }
       .address{
+        font-size: 1.3rem;
+        text-transform: capitalize;
         position: absolute;
         bottom: 20px;
         opacity: 1;
+        -webkit-transition: all .4s ease-in-out;
         transition: all .4s ease-in-out;
+        text-shadow: 0px 1px 4px rgba(91, 91, 91, 1);
       }
 
       .details{
+        -webkit-transition: all .4s ease-in-out;
         transition: all .4s ease-in-out;
         opacity: 0;
         padding: 30px;
@@ -165,9 +166,7 @@
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5a04d3+0,b751f7+100 */
-      background: rgba(90,4,211, .8); /* Old browsers */
-      background: -moz-linear-gradient(-45deg,  rgba(90,4,211,.8) 0%, rgba(183,81,247,.8) 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(-45deg,  rgba(90,4,211,.8) 0%,rgba(183,81,247,.8) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: rgba(90,4,211, .8); /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
       background: linear-gradient(135deg,  rgba(90,4,211,.8) 0%,rgba(183,81,247,.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5a04d3', endColorstr='#b751f7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
@@ -178,9 +177,6 @@
         border: 2px solid white;
         display: inline-block;
         background: url("https://s-ec.bstatic.com/images/hotel/max1024x768/180/180198842.jpg") no-repeat center center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
       }
       .user-details{
@@ -249,6 +245,7 @@
   border-radius: 5px;
   text-align: center;
   max-width: 150px;
+  -webkit-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
   &:hover{
     cursor: pointer;
@@ -263,7 +260,6 @@
     margin: 0 auto;
     background: white;
     -webkit-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
-    -moz-box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
     box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
 
     li{

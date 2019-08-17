@@ -8,13 +8,63 @@ import {
 	faMapMarker
 } from '@fortawesome/free-solid-svg-icons';
 
+//font awesome incons
 const list = <FontAwesomeIcon icon={faList} />;
 const th = <FontAwesomeIcon icon={faTh} />;
 const square = <FontAwesomeIcon icon={faSquare} />;
 const bed = <FontAwesomeIcon icon={faBed} />;
 const marker = <FontAwesomeIcon icon={faMapMarker} />;
 
-const Listings = () => {
+const Listings = ({data}) => {
+
+  //function running each looped listing with all the properties
+  const loopListings = () => {
+  const dataListing = data
+    return dataListing.map((listing, index) => {
+      return (    <div key={index} className="col-md-3">
+      <div className="listing">
+        <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`,
+               backgroundSize: 'cover',
+              minHeight: '200px'}}>
+          <span className="address">{listing.address}</span>
+          <div className="details">
+            <div className="col-md-3">
+              <div className="user-img" ></div>
+            </div>
+
+            <div className="col-md-9">
+              <div className="user-details">
+                <span className="user-name">Gurjot Sandhu</span>
+                <span className="post-date">09/12/2019</span>
+              </div>
+              <div className="listing-details">
+                <div className="floor-space">
+                  <i className="fas fa-square">{square}</i>
+                  <span>{listing.floorSpace} ft&sup2;</span>
+                </div>
+                <div className="bedrooms">
+                  <i className="fas fa-bed">{bed}</i>
+                  <span>{listing.rooms} bedrooms</span>
+                </div>
+              </div>
+
+              <div className="view-btn">View Listing</div>
+            </div>
+          </div>
+        </div>
+        <div className="bottom-info">
+          <span className="price">${listing.price} </span>
+          <span className="location">
+            <i className="fas fa-map-marker-alt">{marker}</i>
+            {listing.address}, {listing.state}
+          </span>
+        </div>
+      </div>
+    </div>)
+    })
+  }
+
+
 	return (
 		<section id="listings">
 			<section className="search-area">
@@ -36,158 +86,10 @@ const Listings = () => {
 			</section>
 
 			<section className="listings-results">
-				<div className="col-md-3">
-					<div className="listing">
-						<div className="listing-img">
-							<span className="address">1021 Keys ave</span>
-							<div className="details">
-								<div className="col-md-3">
-									<div className="user-img"></div>
-								</div>
 
-								<div className="col-md-9">
-									<div className="user-details">
-										<span className="user-name">Gurjot Sandhu</span>
-										<span className="post-date">09/12/2019</span>
-									</div>
-									<div className="listing-details">
-										<div className="floor-space">
-											<i className="fas fa-square">{square}</i>
-											<span>1000 ft&sup2;</span>
-										</div>
-										<div className="bedrooms">
-											<i className="fas fa-bed">{bed}</i>
-											<span>3 bedrooms</span>
-										</div>
-									</div>
+    {loopListings()}
 
-									<div className="view-btn">View Listing</div>
-								</div>
-							</div>
-						</div>
-						<div className="bottom-info">
-							<span className="price">$1000 / month </span>
-							<span className="location">
-								<i className="fas fa-map-marker-alt">{marker}</i>
-								Ridgewood, NY
-							</span>
-						</div>
-					</div>
-				</div>
-				<div className="col-md-3">
-					<div className="listing">
-						<div className="listing-img">
-							<span className="address">1021 Keys ave</span>
-							<div className="details">
-								<div className="col-md-3">
-									<div className="user-img"></div>
-								</div>
 
-								<div className="col-md-9">
-									<div className="user-details">
-										<span className="user-name">Gurjot Sandhu</span>
-										<span className="post-date">09/12/2019</span>
-									</div>
-									<div className="listing-details">
-										<div className="floor-space">
-											<i className="fas fa-square">{square}</i>
-											<span>1000 ft&sup2;</span>
-										</div>
-										<div className="bedrooms">
-											<i className="fas fa-bed">{bed}</i>
-											<span>3 bedrooms</span>
-										</div>
-									</div>
-
-									<div className="view-btn">View Listing</div>
-								</div>
-							</div>
-						</div>
-						<div className="bottom-info">
-							<span className="price">$1000 / month </span>
-							<span className="location">
-								<i className="fas fa-map-marker-alt">{marker}</i>
-								Ridgewood, NY
-							</span>
-						</div>
-					</div>
-				</div>
-				<div className="col-md-3">
-					<div className="listing">
-						<div className="listing-img">
-							<span className="address">1021 Keys ave</span>
-							<div className="details">
-								<div className="col-md-3">
-									<div className="user-img"></div>
-								</div>
-
-								<div className="col-md-9">
-									<div className="user-details">
-										<span className="user-name">Gurjot Sandhu</span>
-										<span className="post-date">09/12/2019</span>
-									</div>
-									<div className="listing-details">
-										<div className="floor-space">
-											<i className="fas fa-square">{square}</i>
-											<span>1000 ft&sup2;</span>
-										</div>
-										<div className="bedrooms">
-											<i className="fas fa-bed">{bed}</i>
-											<span>3 bedrooms</span>
-										</div>
-									</div>
-
-									<div className="view-btn">View Listing</div>
-								</div>
-							</div>
-						</div>
-						<div className="bottom-info">
-							<span className="price">$1000 / month </span>
-							<span className="location">
-								<i className="fas fa-map-marker-alt">{marker}</i>
-								Ridgewood, NY
-							</span>
-						</div>
-					</div>
-				</div>
-				<div className="col-md-3">
-					<div className="listing">
-						<div className="listing-img">
-							<span className="address">1021 Keys ave</span>
-							<div className="details">
-								<div className="col-md-3">
-									<div className="user-img"></div>
-								</div>
-
-								<div className="col-md-9">
-									<div className="user-details">
-										<span className="user-name">Gurjot Sandhu</span>
-										<span className="post-date">09/12/2019</span>
-									</div>
-									<div className="listing-details">
-										<div className="floor-space">
-											<i className="fas fa-square">{square}</i>
-											<span>1000 ft&sup2;</span>
-										</div>
-										<div className="bedrooms">
-											<i className="fas fa-bed">{bed}</i>
-											<span>3 bedrooms</span>
-										</div>
-									</div>
-
-									<div className="view-btn">View Listing</div>
-								</div>
-							</div>
-						</div>
-						<div className="bottom-info">
-							<span className="price">$1000 / month </span>
-							<span className="location">
-								<i className="fas fa-map-marker-alt">{marker}</i>
-								Ridgewood, NY
-							</span>
-						</div>
-					</div>
-				</div>
 			</section>
 			<section id="pagination">
 				<ul className="pages">
