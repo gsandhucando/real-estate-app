@@ -20,6 +20,12 @@ const Listings = ({data}) => {
   //function running each looped listing with all the properties
   const loopListings = () => {
   const dataListing = data
+  console.log(data, 'listing')
+
+    if (dataListing === undefined || dataListing.length === 0) {
+      return "Sorry No Properties Avaiable."
+    }
+
     return dataListing.map((listing, index) => {
       return (    <div key={index} className="col-md-3">
       <div className="listing">
