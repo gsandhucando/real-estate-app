@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Filter = ({
   change,
@@ -9,35 +9,74 @@ const Filter = ({
   elevator,
   swimming_pool,
   finished_basement,
-  gym
+  gym,
+  populateFormsAction,
+  populateFormsData
 }) => {
+  useEffect(() => {
+    populateFormsAction()
+  }, []);
+
+  // let cities = populateFormsData.cities
+  console.log(populateFormsData.cities);
+  let cityOptions = () => {
+    if (populateFormsData.cities !== undefined) {
+      return populateFormsData.cities.map(item => {
+        return (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        );
+      });
+    }
+  };
+
+  let houseType = () => {
+    if (populateFormsData.houseType !== undefined) {
+      return populateFormsData.houseType.map(item => {
+        return (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        );
+      });
+    }
+  };
+
+  let bedrooms = () => {
+    if (populateFormsData.bedrooms !== undefined) {
+      return populateFormsData.bedrooms.sort().map(item => {
+        return (
+          <option key={item} value={item}>
+            {item} BR
+          </option>
+        );
+      });
+    }
+  };
+
   return (
     <section id="filter">
       <div className="inside">
         <h4>Filter</h4>
+        <label htmlFor="city">City</label>
+        <select onChange={change} name="city" className="filters city">
+          <option value="All">All</option>
+          {cityOptions()}
+        </select>
+        <label htmlFor="houseType">Home Type</label>
         <select
           onChange={change}
-          name="neighbourhood"
-          className="filters neighbourhood"
+          name="houseType"
+          className="filters houseType"
         >
-          <option value="Ridgewood">Ridgewood</option>
-          <option value="Miami">Miami</option>
+          <option value="All">All Homes</option>
+          {houseType()}
         </select>
-        <select
-          onChange={change}
-          name="housetype"
-          className="filters housetype"
-        >
-          <option>Ranch</option>
-          <option>House</option>
-          <option>Apartment</option>
-        </select>
+        <label htmlFor="bedrooms">Bedrooms</label>
         <select onChange={change} name="bedrooms" className="filters bedrooms">
-          <option>1 BR</option>
-          <option>2 BR</option>
-          <option>3 BR</option>
-          <option>4 BR</option>
-          <option>5 BR</option>
+          <option value="0BR">0+</option>
+          {bedrooms()}
         </select>
         <div className="filters price">
           <span className="title">Price</span>
