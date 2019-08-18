@@ -15,7 +15,7 @@ const square = <FontAwesomeIcon icon={faSquare} />;
 const bed = <FontAwesomeIcon icon={faBed} />;
 const marker = <FontAwesomeIcon icon={faMapMarker} />;
 
-const Listings = ({ data }) => {
+const Listings = ({ data, change }) => {
   //function running each looped listing with all the properties
   const loopListings = () => {
     const dataListing = data;
@@ -85,9 +85,9 @@ const Listings = ({ data }) => {
       <section className="sortby-area">
         <div className="results">390 results found</div>
         <div className="sort-options">
-          <select name="sortby" className="sortby">
-            <option value="price-asc">Highest Price</option>
+          <select name="sortby" className="sortby" onChange={change}>
             <option value="price-dsc">Lowest Price</option>
+            <option value="price-asc">Highest Price</option>
           </select>
           <div className="view">
             <i className="fas fa-list">{list}</i>

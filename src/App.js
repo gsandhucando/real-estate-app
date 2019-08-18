@@ -20,21 +20,22 @@ const App = () => {
   let [finished_basement, setFinished_basement] = useState(false);
   let [gym, setGym] = useState(false);
   let [filteredData, setFilteredData] = useState(listingData);
-  let [populateFormsData, setPopulateFormsData] = useState('');
+  let [populateFormsData, setPopulateFormsData] = useState("");
+  let [sortby, setSortby] = useState("price-dsc");
 
-  // console.log(globalState);
   const change = event => {
-    // event.preventDefault()
     let name = event.target.name;
     let value =
       event.target.type === "checkbox"
         ? event.target.checked
         : event.target.value;
+    //setting the state in an object by getting the prev version of state then adding the new peramiters by the name and value
     setFilterState(prev => ({
       ...prev,
       [name]: value
     }));
     // console.log(name, "name!", value, "value");
+    //setting state it the name is === its name then place value otherwise use the default value
     setCity(name === "city" ? value : city);
     setHouseType(name === "houseType" ? value : houseType);
     setBedrooms(name === "bedrooms" ? value : bedrooms);
@@ -48,78 +49,105 @@ const App = () => {
       name === "finished_basement" ? value : finished_basement
     );
     setGym(name === "gym" ? value : gym);
+    setSortby(name === "sortby" ? value : sortby);
   };
   // console.log(filterState);
 
   function populateForms() {
+    //function is to dynamicly populate the select option tags
     //city
     let cities = data.map(item => {
-      return item.city
-    })
+      return item.city;
+    });
 
-    cities = new Set(cities)
-    cities = [...cities]
+    //created a unique array of values so they dont repeat
+    cities = new Set(cities);
+    cities = [...cities];
 
     //homeType
     let houseType = data.map(item => {
-      return item.houseType
-    })
+      return item.houseType;
+    });
 
-    houseType = new Set(houseType)
-    houseType = [...houseType]
+    houseType = new Set(houseType);
+    houseType = [...houseType];
 
     //bedrooms
     let bedrooms = data.map(item => {
-      return item.bedrooms
-    })
+      return item.bedrooms;
+    });
 
-    bedrooms = new Set(bedrooms)
-    bedrooms = [...bedrooms]
+    bedrooms = new Set(bedrooms);
+    bedrooms = [...bedrooms];
 
+    //placing the unique values to a state
     setPopulateFormsData({
       houseType,
       bedrooms,
       cities
-    })
+    });
   }
-  console.log(populateFormsData)
+  // console.log(populateFormsData)
 
   useEffect(() => {
     function filteredDataSearch() {
       // console.log("running");
       let newData = data.filter(item => {
-        // console.log(bedrooms)
+        //filtering by price or floorspace or number of bedrooms
         return (
-          item.price >= min_price && item.price <= max_price && item.floorSpace >=  min_floor_space && item.floorSpace <= max_floor_space && item.bedrooms >= bedrooms
+          item.price >= min_price &&
+          item.price <= max_price &&
+          item.floorSpace >= min_floor_space &&
+          item.floorSpace <= max_floor_space &&
+          item.bedrooms >= bedrooms
         );
       });
-      // console.log(bedrooms);
+      //if it !== default value filter it to show the ones in that city
       if (city !== "All") {
         newData = data.filter(item => {
           // console.log(item.city)
           return item.city === city;
         });
       }
+      //if it !== default value filter it to show the ones by that housetype
       if (houseType !== "All") {
         newData = data.filter(item => {
           // console.log(item.houseType);
           return item.houseType === houseType;
         });
       }
+      //if it !== default value filter it to show the ones with the number of bedrooms
       if (bedrooms !== "0BR") {
         newData = data.filter(item => {
           return item.bedrooms === bedrooms;
         });
       }
-      // console.log(newData, 'newfiltered')
-      // setFilterState(newData);
-      newData = newData.sort((a,b) => {
-        return a.price - b.price
-      })
-      setFilteredData(newData)
+      //on render by default we have it sorted by the price lowest to highest
+      newData = newData.sort((a, b) => {
+        return a.price - b.price;
+      });
+      //for the lowest price filter uptop if its clicked it will sort it by the lowest price like our default above
+      if (sortby === "price-dsc") {
+        newData = newData.sort((a, b) => {
+          return a.price - b.price;
+        });
+      }
+
+      //for the highest price filter uptop if its clicked it will sort it by the highest price
+      if (sortby === "price-asc") {
+        newData = newData.sort((a, b) => {
+          return b.price - a.price;
+        });
+      }
+      //setting data according to the peramiters the user selects
+      setFilteredData(newData);
+
+      //setting data according to the peramiters the user selects
+      setFilterState(newData);
     }
-    // console.log('rendered again')
+    //running the function in useEffect because it will change the state each time its ran
     filteredDataSearch();
+    //have to add the state that is being changed constantly to an array in useEffect
   }, [
     data,
     min_price,
@@ -128,9 +156,9 @@ const App = () => {
     max_floor_space,
     city,
     houseType,
-    bedrooms
+    bedrooms,
+    sortby
   ]);
-
 
   return (
     <div>
@@ -149,7 +177,7 @@ const App = () => {
           populateFormsAction={populateForms}
           populateFormsData={populateFormsData}
         />
-        <Listings data={filteredData} />
+        <Listings data={filteredData} change={change} />
       </section>
     </div>
   );

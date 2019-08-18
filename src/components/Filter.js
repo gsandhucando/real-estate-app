@@ -18,7 +18,7 @@ const Filter = ({
   }, []);
 
   // let cities = populateFormsData.cities
-  console.log(populateFormsData.cities);
+  // console.log(populateFormsData.cities);
   let cityOptions = () => {
     if (populateFormsData.cities !== undefined) {
       return populateFormsData.cities.sort().map(item => {
