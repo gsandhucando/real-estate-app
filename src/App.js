@@ -51,7 +51,7 @@ const App = () => {
       console.log('running')
       const newData = data.filter(item => {
         console.log(item.price)
-        return item.price >= min_price && item.price <= max_price
+        return (item.price >= min_price && item.price <= max_price) && (item.floorSpace >= min_floor_space && item.floorSpace <= max_floor_space)
       })
       console.log(newData, 'newfiltered')
       setFilterState(newData)
@@ -59,7 +59,8 @@ const App = () => {
     }
     console.log('rendered again')
     filteredDataSearch()
-    },[data, min_price, max_price])
+    },[data, min_price, max_price, min_floor_space, max_floor_space])
+    //add floor space and extras
 
   return (
     <div>
