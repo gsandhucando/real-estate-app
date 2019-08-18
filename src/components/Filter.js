@@ -21,7 +21,7 @@ const Filter = ({
   console.log(populateFormsData.cities);
   let cityOptions = () => {
     if (populateFormsData.cities !== undefined) {
-      return populateFormsData.cities.map(item => {
+      return populateFormsData.cities.sort().map(item => {
         return (
           <option key={item} value={item}>
             {item}
@@ -33,7 +33,7 @@ const Filter = ({
 
   let houseType = () => {
     if (populateFormsData.houseType !== undefined) {
-      return populateFormsData.houseType.map(item => {
+      return populateFormsData.houseType.sort().map(item => {
         return (
           <option key={item} value={item}>
             {item}

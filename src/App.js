@@ -113,7 +113,10 @@ const App = () => {
       }
       // console.log(newData, 'newfiltered')
       // setFilterState(newData);
-      setFilteredData(newData);
+      newData = newData.sort((a,b) => {
+        return a.price - b.price
+      })
+      setFilteredData(newData)
     }
     // console.log('rendered again')
     filteredDataSearch();
@@ -127,7 +130,7 @@ const App = () => {
     houseType,
     bedrooms
   ]);
-  //add floor space and extras
+
 
   return (
     <div>
