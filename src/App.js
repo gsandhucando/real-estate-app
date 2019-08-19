@@ -122,8 +122,55 @@ const App = () => {
       //if it !== default value filter it to show the ones with the number of bedrooms
       if (bedrooms !== "0BR") {
         newData = data.filter(item => {
+          console.log(item.bedrooms)
           return item.bedrooms === bedrooms;
         });
+      }
+      // if elevator is clicked and is true we filter through data then filter through it again to see if extra is elevator then we push the items into dataList and set newData to dataList
+      if (elevator === true) {
+        let dataList = []
+        newData = newData.filter(item => {
+          return item.extras.filter(extra => {
+            console.log(extra)
+            if (extra === 'elevator') {
+              dataList = dataList.concat(item)
+            }
+          })
+        })
+        newData = dataList
+      }
+      if (swimming_pool === true) {
+        let dataList = []
+        newData = newData.filter(item => {
+          return item.extras.filter(extra => {
+            if (extra === 'swimming pool') {
+              dataList = dataList.concat(item)
+            }
+          })
+        })
+        newData = dataList
+      }
+      if (finished_basement === true) {
+        let dataList = []
+        newData = newData.filter(item => {
+          return item.extras.filter(extra => {
+            if (extra === 'finished basement') {
+              dataList = dataList.concat(item)
+            }
+          })
+        })
+        newData = dataList
+      }
+      if (gym === true) {
+        let dataList = []
+        newData = newData.filter(item => {
+          return item.extras.filter(extra => {
+            if (extra === 'gym') {
+              dataList = dataList.concat(item)
+            }
+          })
+        })
+        newData = dataList
       }
       //on render by default we have it sorted by the price lowest to highest
       newData = newData.sort((a, b) => {
@@ -142,6 +189,15 @@ const App = () => {
           return b.price - a.price;
         });
       }
+      // if (elevator === 'elevator') {
+      //   newData = newData.filter(item => {
+      //     return item.extras.filter(extra => {
+      //       return extra
+      //     })
+      //   })
+      // }
+      // console.log()
+      //for the search bar filtering through data by city name then lowercasing the city name in data and the under input then checking if anyting matchs in the string and it returns an array of cities that match
       if(search !== '') {
         newData = newData.filter(item => {
           let city = item.city.toLowerCase()
@@ -173,7 +229,11 @@ const App = () => {
     houseType,
     bedrooms,
     sortby,
-    search
+    search,
+    elevator,
+    swimming_pool,
+    finished_basement,
+    gym
   ]);
 
   function changeViewBox() {

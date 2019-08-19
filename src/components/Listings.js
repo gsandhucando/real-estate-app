@@ -135,7 +135,7 @@ const Listings = ({ data, change, view, changeViewBox, changeViewLong }) => {
       </section>
 
       <section className="sortby-area">
-        <div className="results">390 results found</div>
+        <div className="results">{data.length} results found</div>
         <div className="sort-options">
           <select name="sortby" className="sortby" onChange={change}>
             <option value="price-dsc">Lowest Price</option>
@@ -148,7 +148,10 @@ const Listings = ({ data, change, view, changeViewBox, changeViewLong }) => {
         </div>
       </section>
 
+      <div className='row'>
       <section className="listings-results">{loopListings()}</section>
+      </div>
+      <div className='row'>
       <section id="pagination">
         <ul className="pages">
           <li>Prev</li>
@@ -160,6 +163,7 @@ const Listings = ({ data, change, view, changeViewBox, changeViewLong }) => {
           <li>Next</li>
         </ul>
       </section>
+      </div>
     </section>
   );
 };
