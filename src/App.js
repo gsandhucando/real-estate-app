@@ -54,7 +54,7 @@ const App = () => {
     setSortby(name === "sortby" ? value : sortby);
     setSearch(name === 'search' ? value : search)
   };
-  console.log(filterState);
+  // console.log(filterState);
 
   function populateForms() {
     //function is to dynamicly populate the select option tags
@@ -122,7 +122,7 @@ const App = () => {
       //if it !== default value filter it to show the ones with the number of bedrooms
       if (bedrooms !== "0BR") {
         newData = data.filter(item => {
-          console.log(item.bedrooms)
+          // console.log(item.bedrooms)
           return item.bedrooms === bedrooms;
         });
       }
@@ -131,7 +131,7 @@ const App = () => {
         let dataList = []
         newData = newData.filter(item => {
           return item.extras.filter(extra => {
-            console.log(extra)
+            // console.log(extra)
             if (extra === 'elevator') {
               dataList = dataList.concat(item)
             }
@@ -189,14 +189,7 @@ const App = () => {
           return b.price - a.price;
         });
       }
-      // if (elevator === 'elevator') {
-      //   newData = newData.filter(item => {
-      //     return item.extras.filter(extra => {
-      //       return extra
-      //     })
-      //   })
-      // }
-      // console.log()
+
       //for the search bar filtering through data by city name then lowercasing the city name in data and the under input then checking if anyting matchs in the string and it returns an array of cities that match
       if(search !== '') {
         newData = newData.filter(item => {

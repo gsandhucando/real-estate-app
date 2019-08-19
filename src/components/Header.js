@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
 	return (
 		<header>
-			<div className="logo">Logo</div>
+			<div className="logo"><img src='./Properties_Logo.png' /></div>
 
 			<nav>
 				<a href="#-">Create Ads</a>

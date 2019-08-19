@@ -1,3 +1,22 @@
+header{
+  margin: -23px 0;
+  // margin-top: -35px;
+  // margin-bottom: -23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  img {
+    height: 120px;
+    width: auto;
+  }
+}
+
 #content-area{
   overflow: auto;
   width: 100%;
@@ -62,13 +81,21 @@
 
 #listings{
   width: 70%;
-  float: left;
-  // display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 15px;
   background: $offwhite;
 
   .search-area{
     input[type='text']{
+      padding-left: 5px;
       width: 70%;
       background: transparent;
       font-size: 2rem;
@@ -76,7 +103,7 @@
       border-bottom: 1px solid $darkgray;
       margin-bottom: 20px;
       font-weight: 100;
-      color: $lightgrey;
+      color: $darkgray;
     }
   }
   .sortby-area{
@@ -150,6 +177,16 @@
       }
 
       .details{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
+      -ms-flex-direction: inherit;
+          flex-direction: inherit;
         -webkit-transition: all .4s ease-in-out;
         transition: all .4s ease-in-out;
         opacity: 0;
@@ -178,6 +215,7 @@
         display: inline-block;
         background: url("https://s-ec.bstatic.com/images/hotel/max1024x768/180/180198842.jpg") no-repeat center center;
         background-size: cover;
+        margin-left: -20px;
       }
       .user-details{
         vertical-align: top;
@@ -239,6 +277,7 @@
 }
 
 .view-btn{
+  margin-left: -20px;
   background: black;
   padding: 8px;
   font-size: .9rem;
@@ -254,8 +293,6 @@
 }
 
 #pagination{
-  width: 100%;
-  display: block;
   text-align: center;
   .pages{
     display: inline-block;
@@ -279,19 +316,19 @@
   }
 }
 
-// .col-md-3{
-//   width: 25%;
-//   display: inline-block;
-//   vertical-align: top;
-//   padding: 0 15px;
-// }
-// .col-md-9{
-//   width: 75%;
-//   display: inline-block;
-// }
-// .col-lg-6{
-//   width: 50%;
-//   display: inline-block;
-//   vertical-align: top;
-//   padding: 0 15px;
-// }
+.col-md-3{
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 15px;
+}
+.col-md-9{
+  width: 75%;
+  display: inline-block;
+}
+.col-lg-6{
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 15px;
+}
