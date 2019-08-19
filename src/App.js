@@ -22,6 +22,8 @@ const App = () => {
   let [filteredData, setFilteredData] = useState(listingData);
   let [populateFormsData, setPopulateFormsData] = useState("");
   let [sortby, setSortby] = useState("price-dsc");
+  let [view, setView] = useState("box");
+  let [search, setSearch] = useState("");
 
   const change = event => {
     let name = event.target.name;
@@ -34,7 +36,7 @@ const App = () => {
       ...prev,
       [name]: value
     }));
-    // console.log(name, "name!", value, "value");
+    console.log(name, "name!", value, "value");
     //setting state it the name is === its name then place value otherwise use the default value
     setCity(name === "city" ? value : city);
     setHouseType(name === "houseType" ? value : houseType);
@@ -50,8 +52,9 @@ const App = () => {
     );
     setGym(name === "gym" ? value : gym);
     setSortby(name === "sortby" ? value : sortby);
+    setSearch(name === 'search' ? value : search)
   };
-  // console.log(filterState);
+  console.log(filterState);
 
   function populateForms() {
     //function is to dynamicly populate the select option tags
@@ -139,6 +142,18 @@ const App = () => {
           return b.price - a.price;
         });
       }
+      if(search !== '') {
+        newData = newData.filter(item => {
+          let city = item.city.toLowerCase()
+          let searchText = search.toLowerCase()
+          let n = city.match(searchText)
+
+          if (n !== null) {
+            return true
+          }
+
+        })
+      }
       //setting data according to the peramiters the user selects
       setFilteredData(newData);
 
@@ -157,8 +172,16 @@ const App = () => {
     city,
     houseType,
     bedrooms,
-    sortby
+    sortby,
+    search
   ]);
+
+  function changeViewBox() {
+    setView("box");
+  }
+  function changeViewLong() {
+    setView("long");
+  }
 
   return (
     <div>
@@ -177,7 +200,13 @@ const App = () => {
           populateFormsAction={populateForms}
           populateFormsData={populateFormsData}
         />
-        <Listings data={filteredData} change={change} />
+        <Listings
+          data={filteredData}
+          change={change}
+          view={view}
+          changeViewBox={() => changeViewBox}
+          changeViewLong={() => changeViewLong}
+        />
       </section>
     </div>
   );
