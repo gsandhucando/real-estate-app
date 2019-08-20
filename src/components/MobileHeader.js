@@ -23,7 +23,7 @@ const MobileHeader = ({mobile}) => {
     },
     showNav: {
       opacity: 1,
-      visibility: 'visible'
+      visibility: 'visible',
     }
   }
 
