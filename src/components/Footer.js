@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <div className='footer-container'>
-      {/* <img /> */}
+        {/* <img src="./iphone.png" alt='iphone' /> */}
       <div className='footer-left'>
       <div className='app-writing'>
       <h1>Download Properties App</h1>

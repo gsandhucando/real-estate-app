@@ -21,7 +21,7 @@ header{
   overflow: auto;
   width: 100%;
   background: white;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 #filter {
@@ -326,12 +326,18 @@ footer{
     height: 100%;
     align-items: center;
     padding-top: 20px;
+    margin: 0 20px;
+    // img{
+    //   height: 280px;
+    //   background: white;
+    //   // border-radius: 25px;
+    // }
     .footer-left{
       display: flex;
       flex-direction: column;
       width: 50%;
       height: 100%;
-      line-height: 1.8em;
+      line-height: 1.3em;
     }
   .app-writing{
     // margin-bottom: 20px;
@@ -342,9 +348,11 @@ footer{
       margin-bottom: 5px;
       font-size: 27px;
       font-weight: bold;
+      padding-bottom: 10px;
     }
     p {
       color: $darkgray;
+      padding-bottom: 5px;
     }
   }
   .footer-btn-container {
@@ -368,16 +376,22 @@ footer{
       align-items: center;
       margin-bottom: 5px;
     }
+
   }
   .social-media {
+    // margin-left: 75px;
+    width: 50%;
     padding-bottom: 70px;
     padding-top: 10px;
+    // background: red;
     .facebook{
       height: 30px;
       width: 30px;
       color: #3b5998;
       background: $offwhite;
       border-radius: 50%;
+      margin-right: 20px;
+      cursor: pointer;
     }
     .twitter{
       height: 30px;
@@ -385,6 +399,7 @@ footer{
       color: #00acee;
       background: $offwhite;
       border-radius: 50%;
+      cursor: pointer;
     }
   }
   h5{
@@ -412,6 +427,7 @@ footer{
       p{
         margin-top: 10px;
         color: $darkgray;
+        cursor: pointer;
       }
     }
     .advertisers{
@@ -426,6 +442,7 @@ footer{
       p{
         margin-top: 10px;
         color: $darkgray;
+        cursor: pointer;
       }
     }
   }
