@@ -14,7 +14,7 @@ const ViewBox = ({listing, index, square, bed, marker}) => {
       >
         <span className="address">{listing.address}</span>
         <div className="details">
-          <div className="col-md-3">
+          <div>
             <div className="user-img" />
           </div>
 

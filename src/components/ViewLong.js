@@ -14,11 +14,11 @@ const ViewLong = ({listing, index, square, bed, marker}) => {
               >
                 <span className="address">{listing.address}</span>
                 <div className="details">
-                  <div className="col-md-3">
+                  <div>
                     <div className="user-img" />
                   </div>
 
-                  <div className="col-md-9">
+                  <div>
                     <div className="user-details">
                       <span className="user-name">Gurjot Sandhu</span>
                       <span className="post-date">09/12/2019</span>

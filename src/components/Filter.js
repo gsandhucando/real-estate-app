@@ -59,12 +59,12 @@ const Filter = ({
     <section id="filter">
       <div className="inside">
         <h4>Filter</h4>
-        <label htmlFor="city">City</label>
+        <label htmlFor="city" className='filter-label-name'>City</label>
         <select onChange={change} name="city" className="filters city">
           <option value="All">All</option>
           {cityOptions()}
         </select>
-        <label htmlFor="houseType">Home Type</label>
+        <label htmlFor="houseType" className='filter-label-name'>Home Type</label>
         <select
           onChange={change}
           name="houseType"
@@ -73,7 +73,7 @@ const Filter = ({
           <option value="All">All Homes</option>
           {houseType()}
         </select>
-        <label htmlFor="bedrooms">Bedrooms</label>
+        <label htmlFor="bedrooms" className='filter-label-name'>Bedrooms</label>
         <select onChange={change} name="bedrooms" className="filters bedrooms">
           <option value="0BR">0+</option>
           {bedrooms()}
