@@ -237,9 +237,28 @@ const App = () => {
     setView("long");
   }
 
+  //checking for window resize
+  let [mobile, setMobile] = useState(false);
+
+  let updateDimensions = () => {
+    if (window.innerWidth <= 600) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []);
+
   return (
     <div>
-      <Header />
+      <Header updateDimensions={updateDimensions} mobile={mobile} />
       <section id="content-area">
         <Filter
           change={change}

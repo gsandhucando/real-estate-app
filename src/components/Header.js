@@ -1,8 +1,11 @@
 import React from 'react';
+import MobileHeader from './MobileHeader';
 
-const Header = () => {
+const Header = ({mobile}) => {
 	return (
-		<header>
+		<>
+		{ mobile ? <MobileHeader mobile={mobile} /> :
+		<header className='header' >
 			<div className="logo"><img src='./Properties_Logo.png' /></div>
 
 			<nav>
@@ -14,6 +17,8 @@ const Header = () => {
 				</a>
 			</nav>
 		</header>
+		}
+		</>
 	);
 };
 

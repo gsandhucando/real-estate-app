@@ -1,4 +1,4 @@
-header{
+.header{
   margin: -23px 0;
   // margin-top: -35px;
   // margin-bottom: -23px;
@@ -16,6 +16,42 @@ header{
     width: auto;
   }
 }
+
+.mobile-header{
+
+  img {
+    height: 120px;
+    width: auto;
+  }
+  nav {
+    // display: flex;
+    // flex-direction: column;
+  }
+}
+// .mobile-nav{
+//   // background: red;
+//   // z-index: 9999;
+//   // height: 100%;
+//   // width: 100%;
+// }
+.mobile-burger{
+  color: $pink;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: 300ms ease-in-out all;
+  transform: rotate(90deg)
+}
+.mobile-burger-animation{
+  color: $pink;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: 300ms ease-in-out all;
+  transform: rotate(0deg)
+}
+
+
 
 #content-area{
   overflow: auto;
