@@ -5,16 +5,14 @@ const Header = ({mobile}) => {
 	return (
 		<>
 		{ mobile ? <MobileHeader mobile={mobile} /> :
-		<header className='header' >
+		<header className={mobile ? 'mobile-header' : 'main-header'} >
 			<div className="logo"><img src='./Properties_Logo.png' /></div>
 
 			<nav>
 				<a href="#-">Create Ads</a>
 				<a href="#-">About Us</a>
 				<a href="#-">Log In</a>
-				<a href="#-" className="register-btn">
-					Register
-				</a>
+				<a href="#-" className="register-btn">Register</a>
 			</nav>
 		</header>
 		}
