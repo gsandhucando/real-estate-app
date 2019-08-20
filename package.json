@@ -33,5 +33,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/icons-ant-design": "^1.0.1",
+    "@iconify/icons-fa-brands": "^1.0.2",
+    "@iconify/react": "^1.1.1"
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Footer from './components/Footer';
 import "./scss/App.scss";
 import Filter from "./components/Filter";
 import Listings from "./components/Listings";
@@ -261,6 +262,7 @@ const App = () => {
           changeViewLong={() => changeViewLong}
         />
       </section>
+      <Footer />
     </div>
   );
 };

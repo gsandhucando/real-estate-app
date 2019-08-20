@@ -316,6 +316,122 @@ header{
   }
 }
 
+footer{
+  width: 100%;
+  height: 300px;
+  background: $darkpurple;
+  color: $offwhite;
+  .footer-container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-top: 20px;
+    .footer-left{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+      line-height: 1.8em;
+    }
+  .app-writing{
+    // margin-bottom: 20px;
+    color: $offwhite;
+
+    h1{
+      // background: red;
+      margin-bottom: 5px;
+      font-size: 27px;
+      font-weight: bold;
+    }
+    p {
+      color: $darkgray;
+    }
+  }
+  .footer-btn-container {
+    display: flex;
+    flex-direction: row;
+
+    .icon{
+      margin-right: 10px;
+    }
+    .footer-btn{
+      background: $pink;
+      text-align: center;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      height: 40px;
+      width: 120px;
+      margin-right: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+  }
+  .social-media {
+    padding-bottom: 70px;
+    padding-top: 10px;
+    .facebook{
+      height: 30px;
+      width: 30px;
+      color: #3b5998;
+      background: $offwhite;
+      border-radius: 50%;
+    }
+    .twitter{
+      height: 30px;
+      width: 30px;
+      color: #00acee;
+      background: $offwhite;
+      border-radius: 50%;
+    }
+  }
+  h5{
+    // background: red;
+    // display: flex;
+    // height: 0px;
+    // margin-top: 50px;
+  }
+  .footer-right{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    // background: red;
+    line-height: 1.8em;
+    .tentants{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // background: red;
+      // padding-bottom: 150px;
+      // height: 300px;
+      // margin-right: 15px;
+      p{
+        margin-top: 10px;
+        color: $darkgray;
+      }
+    }
+    .advertisers{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      // background: red;
+      // height: 300px;
+      // padding-bottom: 80px;
+      margin-right: 15px;
+      margin-left: 10px;
+      p{
+        margin-top: 10px;
+        color: $darkgray;
+      }
+    }
+  }
+}
+}
+
 .col-md-3{
   width: 25%;
   display: inline-block;
