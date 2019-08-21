@@ -8,7 +8,7 @@ import {
   faTh,
   faSquare,
   faBed,
-  faMapMarker
+  faMapMarkerAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 //font awesome incons
@@ -16,7 +16,7 @@ const list = <FontAwesomeIcon icon={faList} />;
 const th = <FontAwesomeIcon icon={faTh} />;
 const square = <FontAwesomeIcon icon={faSquare} />;
 const bed = <FontAwesomeIcon icon={faBed} />;
-const marker = <FontAwesomeIcon icon={faMapMarker} />;
+const marker = <FontAwesomeIcon icon={faMapMarkerAlt} />;
 
 const Listings = ({
   data,
