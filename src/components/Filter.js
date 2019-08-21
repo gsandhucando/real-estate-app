@@ -11,7 +11,8 @@ const Filter = ({
   finished_basement,
   gym,
   populateFormsAction,
-  populateFormsData
+  populateFormsData,
+  mobile
 }) => {
   useEffect(() => {
     populateFormsAction()
@@ -56,8 +57,8 @@ const Filter = ({
   };
 
   return (
-    <section id="filter">
-      <div className="inside">
+    <section id={!mobile ? "filter" : "mobile-filter"}>
+      <div className={/*!mobile ?*/ "inside" /*: 'mobile-inside'*/}>
         <h4>Filter</h4>
         <label htmlFor="city" className='filter-label-name'>City</label>
         <select onChange={change} name="city" className="filters city">

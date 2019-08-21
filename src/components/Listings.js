@@ -18,7 +18,7 @@ const square = <FontAwesomeIcon icon={faSquare} />;
 const bed = <FontAwesomeIcon icon={faBed} />;
 const marker = <FontAwesomeIcon icon={faMapMarker} />;
 
-const Listings = ({ data, change, view, changeViewBox, changeViewLong }) => {
+const Listings = ({ data, change, view, changeViewBox, changeViewLong, mobile }) => {
   //function running each looped listing with all the properties
   const loopListings = () => {
     const dataListing = data;
@@ -29,15 +29,15 @@ const Listings = ({ data, change, view, changeViewBox, changeViewLong }) => {
     }
 
     return dataListing.map((listing, index) => {
-      if (view === 'box') {
+      if (view !== 'view') {
         return (
           //this is the boxview
-         <ViewBox key={index} listing={listing} index={index} square={square} bed={bed} marker={marker} />
+         <ViewBox key={index} data={data} listing={listing} index={index} square={square} bed={bed} marker={marker} />
         )
       } else {
         //this is the longview
         return (
-          <ViewLong key={index} listing={listing} index={index} square={square} bed={bed} marker={marker} />
+          <ViewLong key={index} data={data} listing={listing} index={index} square={square} bed={bed} marker={marker} />
 
         );
       }
@@ -45,11 +45,10 @@ const Listings = ({ data, change, view, changeViewBox, changeViewLong }) => {
   };
 
   return (
-    <section id="listings">
+    <section id={!mobile ? "listings" : 'mobile-listings'}>
       <section className="search-area">
         <input onChange={change} type="text" name="search" placeholder='Search by city'/>
       </section>
-
       <section className="sortby-area">
         <div className="results">{data.length} results found</div>
         <div className="sort-options">

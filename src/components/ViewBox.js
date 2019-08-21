@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ViewBox = ({listing, index, square, bed, marker}) => {
+  console.log(listing)
   return (
     <div key={index} className="col-md-3">
     <div className="listing">
@@ -15,13 +16,13 @@ const ViewBox = ({listing, index, square, bed, marker}) => {
         <span className="address">{listing.address}</span>
         <div className="details">
           <div>
-            <div className="user-img" />
+            <div className="user-img" style={{backgroundImage: `url(${listing.agentImg})`}}/>
           </div>
 
           <div className="col-md-9">
             <div className="user-details">
-              <span className="user-name">Gurjot Sandhu</span>
-              <span className="post-date">09/12/2019</span>
+              <span className="user-name">{listing.agent}</span>
+              <span className="post-date">{listing.listingData}</span>
             </div>
             <div className="listing-details">
               <div className="floor-space">

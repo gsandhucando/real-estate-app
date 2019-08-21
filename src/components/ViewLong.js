@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ViewLong = ({listing, index, square, bed, marker}) => {
+const ViewLong = ({listing, index, square, bed, marker, agent, listDate, agentImg}) => {
   return (
 <div key={index} className="col-md-12 col-lg-6">
             <div className="listing">

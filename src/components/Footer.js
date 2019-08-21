@@ -3,16 +3,21 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import googlePlay from '@iconify/icons-fa-brands/google-play';
 import appleFill from '@iconify/icons-ant-design/apple-fill';
-import facebookIcon from '@iconify/icons-fa-brands/facebook';
-import twitterCircleFill from '@iconify/icons-ant-design/twitter-circle-fill';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
+//font awesome incons
+const facebook = <FontAwesomeIcon className='facebook' icon={faFacebookF} />;
+const twiiter = <FontAwesomeIcon className='twitter' icon={faTwitter} />;
 
 
-const Footer = () => {
+const Footer = ({mobile}) => {
   return (
-    <footer>
-      <div className='footer-container'>
+    <footer id={!mobile ? 'def-footer' : 'mobile-footer'}>
+      <div className={!mobile ? 'footer-container' : 'mobile-footer-container'}>
         {/* <img src="./iphone.png" alt='iphone' /> */}
-      <div className='footer-left'>
+      <div className={!mobile ? 'footer-left' : 'mobile-footer-left'}>
       <div className='app-writing'>
       <h1>Download Properties App</h1>
       <p>Use your app to have access to all our rental properties</p>
@@ -22,12 +27,12 @@ const Footer = () => {
       <a href="#-" className="footer-btn"><Icon icon={appleFill} className='icon' /> AppStore</a>
       </div>
       <div className='social-media'>
-      <Icon icon={facebookIcon} className='facebook' />
-      <Icon icon={twitterCircleFill} className='twitter' />
+        {facebook}
+        {twiiter}
       </div>
       <h5>2019 Properties</h5>
       </div>
-      <div className='footer-right'>
+      <div className={!mobile ? 'footer-right' : 'mobile-footer-right'}>
       <div className='tentants'>
         <h3>For Tentants</h3>
         <p>About Properties</p>
@@ -35,7 +40,7 @@ const Footer = () => {
         <p>This is us</p>
         <p>Properties APP</p>
       </div>
-      <div className='advertisers'>
+      <div className={!mobile ? 'advertisers' : 'mobile-advertisers'}>
         <h3>For Advertisers</h3>
         <p>About Properties</p>
       </div>

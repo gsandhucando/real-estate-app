@@ -23,7 +23,7 @@ const App = () => {
   let [filteredData, setFilteredData] = useState(listingData);
   let [populateFormsData, setPopulateFormsData] = useState("");
   let [sortby, setSortby] = useState("price-dsc");
-  let [view, setView] = useState("box");
+  let [view, setView] = useState("view");
   let [search, setSearch] = useState("");
 
   const change = event => {
@@ -272,6 +272,7 @@ const App = () => {
           gym={gym}
           populateFormsAction={populateForms}
           populateFormsData={populateFormsData}
+          mobile={mobile}
         />
         <Listings
           data={filteredData}
@@ -279,9 +280,10 @@ const App = () => {
           view={view}
           changeViewBox={() => changeViewBox}
           changeViewLong={() => changeViewLong}
+          mobile={mobile}
         />
       </section>
-      <Footer />
+      <Footer mobile={mobile} />
     </div>
   );
 };
