@@ -10,7 +10,7 @@ const listingData = [
     bedrooms: "3",
     price: 300000,
     floorSpace: "3000",
-    extras: ["elevator", "gym"],
+    extras: ["gym"],
     houseType: "House",
     image:
       "https://cdn.vox-cdn.com/thumbor/roV_pKe8yk9CP_kDOhHenl0ILTQ=/0x0:5760x3840/1200x675/filters:focal(2420x1460:3340x2380)/cdn.vox-cdn.com/uploads/chorus_image/image/61365739/HouseCalls_Boulder_Hess_exterior_1.0.0.1510598306.0.jpg"
@@ -42,7 +42,7 @@ const listingData = [
     bedrooms: "2",
     price: 100000,
     floorSpace: "2000",
-    extras: ["elevator", "gym"],
+    extras: ["gym"],
     houseType: "Apartment",
     image:
       "https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/4206-28/the-kelvin-apartments-exterior.jpg"
@@ -89,7 +89,7 @@ const listingData = [
     state: "CA",
     bedrooms: "6",
     price: 1400000,
-    floorSpace: "5000",
+    floorSpace: "15000",
     extras: ["elevator", "swimming pool"],
     houseType: "House",
     image:

@@ -55,7 +55,7 @@ const App = () => {
     setSortby(name === "sortby" ? value : sortby);
     setSearch(name === "search" ? value : search);
   };
-  // console.log(filterState);
+  console.log(filterState !== null);
 
   function populateForms() {
     //function is to dynamicly populate the select option tags
@@ -135,7 +135,9 @@ const App = () => {
             // console.log(extra)
             if (extra === "elevator") {
               dataList = dataList.concat(item);
+
             }
+              return null
           });
         });
         newData = dataList;
@@ -147,6 +149,7 @@ const App = () => {
             if (extra === "swimming pool") {
               dataList = dataList.concat(item);
             }
+            return null
           });
         });
         newData = dataList;
@@ -158,6 +161,7 @@ const App = () => {
             if (extra === "finished basement") {
               dataList = dataList.concat(item);
             }
+            return null
           });
         });
         newData = dataList;
@@ -169,6 +173,7 @@ const App = () => {
             if (extra === "gym") {
               dataList = dataList.concat(item);
             }
+            return null
           });
         });
         newData = dataList;
@@ -201,6 +206,7 @@ const App = () => {
           if (n !== null) {
             return true;
           }
+          return null
         });
       }
       //setting data according to the peramiters the user selects

@@ -6,7 +6,7 @@ const Header = ({mobile}) => {
 		<>
 		{ mobile ? <MobileHeader mobile={mobile} /> :
 		<header className={mobile ? 'mobile-header' : 'main-header'} >
-			<div className="logo"><img src='./Properties_Logo.png' /></div>
+			<div className="logo"><img src='./Properties_Logo.png' alt='logo' /></div>
 
 			<nav>
 				<a href="#-">Create Ads</a>
