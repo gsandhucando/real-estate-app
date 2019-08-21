@@ -1,15 +1,13 @@
 import React from 'react';
 
-import { Icon } from '@iconify/react';
-import googlePlay from '@iconify/icons-fa-brands/google-play';
-import appleFill from '@iconify/icons-ant-design/apple-fill';
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF, faTwitter, faGooglePlay, faApple } from '@fortawesome/free-brands-svg-icons'
 
 //font awesome incons
 const facebook = <FontAwesomeIcon className='facebook' icon={faFacebookF} />;
 const twiiter = <FontAwesomeIcon className='twitter' icon={faTwitter} />;
+const googlePlay = <FontAwesomeIcon className='icon' icon={faGooglePlay} />;
+const apple = <FontAwesomeIcon className='icon' icon={faApple} />;
 
 
 const Footer = ({mobile}) => {
@@ -23,8 +21,8 @@ const Footer = ({mobile}) => {
       <p>Use your app to have access to all our rental properties</p>
       </div>
       <div className='footer-btn-container'>
-      <a href="#-" className="footer-btn"><Icon icon={googlePlay} className='icon' /> Playstore</a>
-      <a href="#-" className="footer-btn"><Icon icon={appleFill} className='icon' /> AppStore</a>
+      <a href="#-" className="footer-btn">{googlePlay} Playstore</a>
+      <a href="#-" className="footer-btn">{apple} AppStore</a>
       </div>
       <div className='social-media'>
         {facebook}
