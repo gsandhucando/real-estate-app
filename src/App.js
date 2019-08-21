@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import Footer from './components/Footer';
+import Footer from "./components/Footer";
 import "./scss/App.scss";
 import Filter from "./components/Filter";
 import Listings from "./components/Listings";
@@ -53,7 +53,7 @@ const App = () => {
     );
     setGym(name === "gym" ? value : gym);
     setSortby(name === "sortby" ? value : sortby);
-    setSearch(name === 'search' ? value : search)
+    setSearch(name === "search" ? value : search);
   };
   // console.log(filterState);
 
@@ -129,49 +129,49 @@ const App = () => {
       }
       // if elevator is clicked and is true we filter through data then filter through it again to see if extra is elevator then we push the items into dataList and set newData to dataList
       if (elevator === true) {
-        let dataList = []
+        let dataList = [];
         newData = newData.filter(item => {
           return item.extras.filter(extra => {
             // console.log(extra)
-            if (extra === 'elevator') {
-              dataList = dataList.concat(item)
+            if (extra === "elevator") {
+              dataList = dataList.concat(item);
             }
-          })
-        })
-        newData = dataList
+          });
+        });
+        newData = dataList;
       }
       if (swimming_pool === true) {
-        let dataList = []
+        let dataList = [];
         newData = newData.filter(item => {
           return item.extras.filter(extra => {
-            if (extra === 'swimming pool') {
-              dataList = dataList.concat(item)
+            if (extra === "swimming pool") {
+              dataList = dataList.concat(item);
             }
-          })
-        })
-        newData = dataList
+          });
+        });
+        newData = dataList;
       }
       if (finished_basement === true) {
-        let dataList = []
+        let dataList = [];
         newData = newData.filter(item => {
           return item.extras.filter(extra => {
-            if (extra === 'finished basement') {
-              dataList = dataList.concat(item)
+            if (extra === "finished basement") {
+              dataList = dataList.concat(item);
             }
-          })
-        })
-        newData = dataList
+          });
+        });
+        newData = dataList;
       }
       if (gym === true) {
-        let dataList = []
+        let dataList = [];
         newData = newData.filter(item => {
           return item.extras.filter(extra => {
-            if (extra === 'gym') {
-              dataList = dataList.concat(item)
+            if (extra === "gym") {
+              dataList = dataList.concat(item);
             }
-          })
-        })
-        newData = dataList
+          });
+        });
+        newData = dataList;
       }
       //on render by default we have it sorted by the price lowest to highest
       newData = newData.sort((a, b) => {
@@ -192,17 +192,16 @@ const App = () => {
       }
 
       //for the search bar filtering through data by city name then lowercasing the city name in data and the under input then checking if anyting matchs in the string and it returns an array of cities that match
-      if(search !== '') {
+      if (search !== "") {
         newData = newData.filter(item => {
-          let city = item.city.toLowerCase()
-          let searchText = search.toLowerCase()
-          let n = city.match(searchText)
+          let city = item.city.toLowerCase();
+          let searchText = search.toLowerCase();
+          let n = city.match(searchText);
 
           if (n !== null) {
-            return true
+            return true;
           }
-
-        })
+        });
       }
       //setting data according to the peramiters the user selects
       setFilteredData(newData);
