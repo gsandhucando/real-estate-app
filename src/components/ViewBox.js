@@ -8,7 +8,7 @@ const ViewBox = ({ listing, index, square, bed, marker }) => {
         <div
           className="listing-img"
           style={{
-            background: `url("${listing.image}") no-repeat center center`,
+            background: `url("${listing.image}") center center / cover no-repeat`,
             backgroundSize: "cover",
             minHeight: "200px"
           }}

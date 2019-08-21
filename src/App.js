@@ -23,7 +23,7 @@ const App = () => {
   let [filteredData, setFilteredData] = useState(listingData);
   let [populateFormsData, setPopulateFormsData] = useState("");
   let [sortby, setSortby] = useState("price-dsc");
-  let [view, setView] = useState("view");
+  let [view, setView] = useState("box");
   let [search, setSearch] = useState("");
 
   const change = event => {

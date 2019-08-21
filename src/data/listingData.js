@@ -78,6 +78,22 @@ const listingData = [
     houseType: "House",
     image:
       "https://www.contemporist.com/wp-content/uploads/2016/08/contemporary-house_080816_01-800x534.jpg"
+  },
+  {
+    id: 6,
+    agent: "Gurjot Sandhu",
+    listDate: "08/21/19",
+    agentImg: "./gurjot.jpg",
+    address: "8080 Kings st",
+    city: "Oakland",
+    state: "CA",
+    bedrooms: "6",
+    price: 1400000,
+    floorSpace: "5000",
+    extras: ["elevator", "swimming pool"],
+    houseType: "House",
+    image:
+      "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fcarriecoolidge%2Ffiles%2F2019%2F04%2F9136-NW-66th-Ln-Parkland-FL-large-054-35-Front-Yard-1500x1000-72dpi.jpg"
   }
 ];
 
