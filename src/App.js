@@ -37,7 +37,7 @@ const App = () => {
       ...prev,
       [name]: value
     }));
-    console.log(name, "name!", value, "value");
+    // console.log(name, "name!", value, "value");
     //setting state it the name is === its name then place value otherwise use the default value
     setCity(name === "city" ? value : city);
     setHouseType(name === "houseType" ? value : houseType);

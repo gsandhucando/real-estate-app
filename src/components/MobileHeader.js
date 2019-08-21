@@ -6,11 +6,11 @@ import {
 
 //font awesome incons
 
-const MobileHeader = ({mobile}) => {
+const MobileHeader = () => {
   let [burger, setBurger] = useState(false)
 
   function burgerClick() {
-    console.log('click')
+    // console.log('click')
     setBurger(!burger)
 
   }

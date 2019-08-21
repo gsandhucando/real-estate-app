@@ -29,7 +29,7 @@ const Listings = ({ data, change, view, changeViewBox, changeViewLong, mobile })
     }
 
     return dataListing.map((listing, index) => {
-      if (view !== 'view') {
+      if (view === 'box') {
         return (
           //this is the boxview
          <ViewBox key={index} data={data} listing={listing} index={index} square={square} bed={bed} marker={marker} />

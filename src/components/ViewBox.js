@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ViewBox = ({listing, index, square, bed, marker}) => {
-  console.log(listing)
+  // console.log(listing)
   return (
     <div key={index} className="col-md-3">
     <div className="listing">
