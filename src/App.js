@@ -6,7 +6,8 @@ import Filter from "./components/Filter";
 import Listings from "./components/Listings";
 import listingData from "./data/listingData";
 
-const App = () => {
+
+const App = ({hideLoader}) => {
   let data = listingData;
   let [filterState, setFilterState] = useState([]);
   let [city, setCity] = useState("All");
@@ -25,6 +26,8 @@ const App = () => {
   let [sortby, setSortby] = useState("price-dsc");
   let [view, setView] = useState("box");
   let [search, setSearch] = useState("");
+
+  useEffect(() => hideLoader(), []);
 
   const change = event => {
     let name = event.target.name;
