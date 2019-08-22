@@ -14,7 +14,7 @@ const Details = props => {
       return listing;
     });
   }, [param]);
-  // console.log(listing);
+  console.log(listing);
 
   const info = listing.map(list => {
     return (
@@ -24,7 +24,7 @@ const Details = props => {
         </div>
         <div className="prop-details">
           <div className="propertie-header">
-            <h2>Properties</h2>
+            <h2>{list.houseType}</h2>
           </div>
           <div className="details-house-info">
             <div className="detail-price">
