@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ViewBox = ({ listing, index, square, bed, marker }) => {
-  console.log(listing.id);
+  // console.log(listing.id);
   return (
     <div key={index} className="col-md-3">
       <div className="listing">

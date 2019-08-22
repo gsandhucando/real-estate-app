@@ -14,7 +14,7 @@ const Details = props => {
       return listing;
     });
   }, [param]);
-  console.log(listing);
+  // console.log(listing);
 
   const info = listing.map(list => {
     return (
