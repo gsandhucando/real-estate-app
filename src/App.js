@@ -7,7 +7,7 @@ import Listings from "./components/Listings";
 import listingData from "./data/listingData";
 
 
-const App = ({hideLoader}) => {
+const App = () => {
   let data = listingData;
   let [filterState, setFilterState] = useState([]);
   let [city, setCity] = useState("All");
@@ -27,7 +27,6 @@ const App = ({hideLoader}) => {
   let [view, setView] = useState("box");
   let [search, setSearch] = useState("");
 
-  useEffect(() => hideLoader(), []);
 
   const change = event => {
     let name = event.target.name;

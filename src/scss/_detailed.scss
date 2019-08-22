@@ -1,0 +1,42 @@
+.detailed-listing {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .datails-img{
+    display: flex;
+    justify-content: center;
+    img{
+      height: 60%;
+      width: 60%;
+    }
+  }
+    .propertie-header{
+      // display: flex;
+      // justify-content: center;
+      h2{
+
+      }
+    }
+    .details-house-info{
+      .detail-price{
+
+      }
+    }
+    .detail-address{
+      display: flex;
+      justify-content: center;
+      background: red;
+      height: 10px;
+
+    }
+    .detail-btn{
+      button{
+
+      }
+    }
+    .detail-agent{
+      img{
+
+      }
+    }
+}

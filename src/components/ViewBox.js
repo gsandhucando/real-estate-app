@@ -1,7 +1,8 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const ViewBox = ({ listing, index, square, bed, marker }) => {
-  // console.log(listing)
+  console.log(listing.id)
   return (
     <div key={index} className="col-md-3">
       <div className="listing">
@@ -38,7 +39,9 @@ const ViewBox = ({ listing, index, square, bed, marker }) => {
                 </div>
               </div>
 
-              <div className="view-btn">View Listing</div>
+              <div className="view-btn">
+                <Link to={`/listing/${listing.id}`}>View Listing</Link>
+                </div>
             </div>
           </div>
         </div>
