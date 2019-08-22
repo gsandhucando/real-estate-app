@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
@@ -34,7 +35,9 @@ const MobileHeader = () => {
     <header className="mobile-header">
       {ellipise}
       <div className="logo mobile-nav">
-        <img src="./Properties_Logo.png" alt="ellipise" />
+        <Link to="/">
+          <img src="./Properties_Logo.png" alt="ellipise" />
+        </Link>
       </div>
 
       <nav style={!burger ? styles.hideNav : styles.showNav}>

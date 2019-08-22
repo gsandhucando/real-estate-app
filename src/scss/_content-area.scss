@@ -31,7 +31,7 @@
   background: $darkpurple;
   color: white;
   overflow: auto;
-  margin: -23px 0;
+  margin: -10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -672,6 +672,10 @@
   max-width: 150px;
   -webkit-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
+  a{
+    text-decoration: none;
+    color: white;
+  }
   &:hover{
     cursor: pointer;
     background: $pink;

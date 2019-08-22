@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,7 +14,24 @@ const twiiter = <FontAwesomeIcon className="twitter" icon={faTwitter} />;
 const googlePlay = <FontAwesomeIcon className="icon" icon={faGooglePlay} />;
 const apple = <FontAwesomeIcon className="icon" icon={faApple} />;
 
-const Footer = ({ mobile }) => {
+const Footer = () => {
+  let [mobile, setMobile] = useState(false);
+
+  let updateDimensions = () => {
+    if (window.innerWidth <= 600) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []);
   return (
     <footer id={!mobile ? "def-footer" : "mobile-footer"}>
       <div className={!mobile ? "footer-container" : "mobile-footer-container"}>

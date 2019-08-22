@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
 import "./scss/App.scss";
 import Filter from "./components/Filter";
 import Listings from "./components/Listings";
 import listingData from "./data/listingData";
-
 
 const App = () => {
   let data = listingData;
@@ -26,7 +25,6 @@ const App = () => {
   let [sortby, setSortby] = useState("price-dsc");
   let [view, setView] = useState("box");
   let [search, setSearch] = useState("");
-
 
   const change = event => {
     let name = event.target.name;
@@ -137,9 +135,8 @@ const App = () => {
             // console.log(extra)
             if (extra === "elevator") {
               dataList = dataList.concat(item);
-
             }
-              return null
+            return null;
           });
         });
         newData = dataList;
@@ -151,7 +148,7 @@ const App = () => {
             if (extra === "swimming pool") {
               dataList = dataList.concat(item);
             }
-            return null
+            return null;
           });
         });
         newData = dataList;
@@ -163,7 +160,7 @@ const App = () => {
             if (extra === "finished basement") {
               dataList = dataList.concat(item);
             }
-            return null
+            return null;
           });
         });
         newData = dataList;
@@ -175,7 +172,7 @@ const App = () => {
             if (extra === "gym") {
               dataList = dataList.concat(item);
             }
-            return null
+            return null;
           });
         });
         newData = dataList;
@@ -208,7 +205,7 @@ const App = () => {
           if (n !== null) {
             return true;
           }
-          return null
+          return null;
         });
       }
       //setting data according to the peramiters the user selects
@@ -265,7 +262,7 @@ const App = () => {
 
   return (
     <div>
-      <Header updateDimensions={updateDimensions} mobile={mobile} />
+      {/* <Header /> */}
       <section id="content-area">
         <Filter
           change={change}
@@ -290,7 +287,7 @@ const App = () => {
           mobile={mobile}
         />
       </section>
-      <Footer mobile={mobile} />
+      {/* <Footer mobile={mobile} /> */}
     </div>
   );
 };
