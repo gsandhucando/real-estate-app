@@ -45,6 +45,11 @@ const Details = props => {
               <button>Contact Agent</button>
               <button>Take a Tour</button>
             </div>
+            <div className='about-property'>
+              <p>
+              Classic {list.houseType} with beautifully remodeled interior.  {list.bedrooms} bedrooms, {list.floorSpace}± sqft of living space.  Updated {list.houseType} features wide vinyl plank flooring, recessed lighting, vaulted ceilings, & lots of natural light in open floorplan living space.  Gourmet kitchen with stainless steel appliances, dual ovens, gas cooktop, quartz countertops, modern subway tile backsplash, and additional bar seating.  Master bedroom suite includes walk-in closet with extensive built-in storage, and elegant master bath with floor-to-ceiling tile, luxurious soaking tub, and frameless glass stall shower.  Front yard with well-maintained, drought resistant landscaping and backyard with patio, shaded pergola, and grassy lawn, ideal for outdoor entertaining. Great location in quiet neighborhood.
+              </p>
+            </div>
           </div>
         </div>
       </div>
