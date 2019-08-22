@@ -7,7 +7,9 @@
   border: 1.1em solid rgba(0, 0, 0, 0.2);
   border-left: 1.1em solid $darkpurple;
   border-radius: 50%;
-  animation: load8 1.1s infinite linear;
+  -webkit-animation: load8 1.1s infinite linear;
+          animation: load8 1.1s infinite linear;
+  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
@@ -15,12 +17,25 @@
   opacity: 0;
 }
 
-@keyframes load8 {
+@-webkit-keyframes load8 {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
