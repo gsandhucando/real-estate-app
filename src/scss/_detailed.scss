@@ -2,43 +2,83 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: $offwhite;
-  height: 100%;
+  // background: rgb(248, 247, 247);
+  // height: 100%;
+  height: 75vh;
   width: 100%;
   padding-top: 15px;
+  line-height: 2.5em;
   .datails-img{
     display: flex;
     justify-content: center;
     img{
-      height: 60%;
-      width: 60%;
+      border-radius: 5px;
+      max-height: 90%;
+      max-width: 50%;
+      min-height: 250px;
+      min-width: 350px;
+      -webkit-box-shadow: 10px 10px 41px -8px rgba(0,0,0,0.38);
+      -moz-box-shadow: 10px 10px 41px -8px rgba(0,0,0,0.38);
+      box-shadow: 10px 10px 41px -8px rgba(0,0,0,0.38);
     }
   }
+  .prop-details{
+    // background: $darkpurple;
+    // color: white;
+    margin-bottom: 30px;
     .propertie-header{
       // display: flex;
       // justify-content: center;
+      font-size: 1.9em;
       h2{
-
+        margin-top: 20px;
       }
     }
     .details-house-info{
       .detail-price{
-
+        font-size: 1.2em;
+        font-weight: bold;
       }
     }
     .detail-address{
       display: flex;
       justify-content: center;
-
+      font-size: 1.2em;
+      font-weight: bold;
     }
     .detail-btn{
       button{
-
+        border: none;
+        height: 50px;
+        width: 120px;
+        background: $pink;
+        color: white;
+        margin-right: 5px;
+        border-radius: 5px;
+        font-size: .9em;
+        font-weight: bold;
+        cursor: pointer;
       }
     }
-    .detail-agent{
-      img{
+  }
+}
 
-      }
-    }
+.img-info-container{
+  // background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.agent-img{
+  height: 40px;
+  width: 40px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px soild $darkpurple;
 }

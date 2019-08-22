@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Header from "./components/Header";
+// import MobileHeader from './components/MobileHeader';
 import Footer from "./components/Footer";
 import Details from "./components/Details";
 
-import data from "./data/listingData";
+// import data from "./data/listingData";
 
 import * as serviceWorker from "./serviceWorker";
 const loader = document.querySelector(".loader");
@@ -21,7 +22,7 @@ const Index = () => {
   useEffect(() => hideLoader(), []);
   return (
     <Router>
-      <Header />
+      <Route path='/' component={Header} />
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/listing/:id" component={Details} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ViewLong = ({ listing, index, square, bed, marker }) => {
   return (
@@ -45,7 +46,9 @@ const ViewLong = ({ listing, index, square, bed, marker }) => {
           <span className="price">${listing.price} </span>
           <span className="location">
             <i className="fas fa-map-marker-alt">{marker}</i>
-            {listing.address}, {listing.state}
+            <Link to={`/listing/${listing.id}`}>
+              {listing.address}, {listing.state}
+            </Link>
           </span>
         </div>
       </div>

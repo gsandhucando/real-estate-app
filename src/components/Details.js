@@ -22,25 +22,29 @@ const Details = props => {
         <div className="datails-img">
           <img src={list.image} alt="house type" />
         </div>
-        <div className="propertie-header">
-          <h2>Properties</h2>
-        </div>
-        <div className="details-house-info">
-          <div className="detail-price">
-            ${list.price} {list.bedrooms} bedrooms 2bathrooms {list.floorSpace}{" "}
-            sqft
+        <div className="prop-details">
+          <div className="propertie-header">
+            <h2>Properties</h2>
           </div>
-          <div className="detail-address">
-            {list.address} {list.city} {list.state}
-          </div>
-          <div className="detail-btn">
-            <button>Contact Agent</button>
-            <button>Take a Tour</button>
-          </div>
-          <div className="detail-agent">
-            <div style={{ backgroundImage: `url(${list.agentImg})` }} />
+          <div className="details-house-info">
+            <div className="detail-price">
+              ${list.price} | {list.bedrooms} bedrooms | {list.floorSpace} sqft
+            </div>
+            <div className="detail-address">
+              {list.address} {list.city} {list.state}
+            </div>
+            <div className="img-info-container">
+              <div
+                className="agent-img"
+                style={{ backgroundImage: `url(.${list.agentImg})` }}
+              />
 
-            {list.agent}
+              {list.agent}
+            </div>
+            <div className="detail-btn">
+              <button>Contact Agent</button>
+              <button>Take a Tour</button>
+            </div>
           </div>
         </div>
       </div>

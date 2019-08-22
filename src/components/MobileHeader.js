@@ -5,7 +5,7 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 //font awesome incons
 
-const MobileHeader = () => {
+const MobileHeader = (props) => {
   let [burger, setBurger] = useState(false);
 
   function burgerClick() {

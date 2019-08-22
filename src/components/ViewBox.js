@@ -1,15 +1,17 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const ViewBox = ({ listing, index, square, bed, marker }) => {
-  console.log(listing.id)
+  console.log(listing.id);
   return (
     <div key={index} className="col-md-3">
       <div className="listing">
         <div
           className="listing-img"
           style={{
-            background: `url("${listing.image}") center center / cover no-repeat`,
+            background: `url("${
+              listing.image
+            }") center center / cover no-repeat`,
             backgroundSize: "cover",
             minHeight: "200px"
           }}
@@ -41,7 +43,7 @@ const ViewBox = ({ listing, index, square, bed, marker }) => {
 
               <div className="view-btn">
                 <Link to={`/listing/${listing.id}`}>View Listing</Link>
-                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -49,7 +51,9 @@ const ViewBox = ({ listing, index, square, bed, marker }) => {
           <span className="price">${listing.price} </span>
           <span className="location">
             <i className="fas fa-map-marker-alt">{marker}</i>
-            {listing.address}, {listing.state}
+            <Link to={`/listing/${listing.id}`}>
+              {listing.address}, {listing.state}
+            </Link>
           </span>
         </div>
       </div>

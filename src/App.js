@@ -60,29 +60,35 @@ const App = () => {
   function populateForms() {
     //function is to dynamicly populate the select option tags
     //city
-    let cities = data.map(item => {
-      return item.city;
-    });
-
     //created a unique array of values so they dont repeat
-    cities = new Set(cities);
-    cities = [...cities];
+    let citySet = new Set()
+    let cities = data.map(item => {
+      if (!citySet.has(item.city)){
+        citySet.add(item.city)
+        return item.city;
+      }
+      return null
+    }).filter(n => n)
 
     //homeType
+    let homeSet = new Set()
     let houseType = data.map(item => {
-      return item.houseType;
-    });
-
-    houseType = new Set(houseType);
-    houseType = [...houseType];
+      if (!homeSet.has(item.houseType)){
+        homeSet.add(item.houseType)
+        return item.houseType;
+      }
+      return null
+    }).filter(n => n)
 
     //bedrooms
+    let bedRoomsSet = new Set()
     let bedrooms = data.map(item => {
-      return item.bedrooms;
-    });
-
-    bedrooms = new Set(bedrooms);
-    bedrooms = [...bedrooms];
+      if (!bedRoomsSet.has(item.bedrooms)){
+        bedRoomsSet.add(item.bedrooms)
+        return item.bedrooms;
+      }
+      return null
+    }).filter(n => n)
 
     //placing the unique values to a state
     setPopulateFormsData({
