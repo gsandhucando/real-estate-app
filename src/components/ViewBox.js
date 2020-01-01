@@ -18,15 +18,19 @@ const ViewBox = ({ listing, index, square, bed, marker }) => {
         >
           <span className="address">{listing.address}</span>
           <div className="details">
-            <div>
-              <div
+            {/* <div> */}
+              {/* <div
                 className="user-img"
                 style={{ backgroundImage: `url(${listing.agentImg})` }}
-              />
-            </div>
+              /> */}
+            {/* </div> */}
 
             <div className="col-md-9">
               <div className="user-details">
+            <div
+                className="user-img"
+                style={{ backgroundImage: `url(${listing.agentImg})` }}
+              />
                 <span className="user-name">{listing.agent}</span>
                 <span className="post-date">{listing.listingData}</span>
               </div>

@@ -253,6 +253,7 @@
     display: block;
     margin-bottom: 25px;
     width: 100%;
+    margin-top: 5px;
   }
   .filters{
     .title{
@@ -266,7 +267,7 @@
       font-size: 1rem;
       padding: .4rem;
       display: inline-block;
-      width: 45%;
+      width: 46%;
       margin-right: 2.5%;
       margin-bottom: 1rem;
     }
@@ -305,6 +306,7 @@
       font-size: 2rem;
       border: none;
       border-bottom: 1px solid $darkgray;
+      margin-top: 5px;
       margin-bottom: 20px;
       font-weight: 100;
       color: $darkgray;
@@ -425,7 +427,8 @@
         display: inline-block;
         background: url("https://s-ec.bstatic.com/images/hotel/max1024x768/180/180198842.jpg") no-repeat center center;
         background-size: cover;
-        margin-left: -20px;
+        // margin-left: -20px;
+        margin-left: -7px;
       }
       .user-details{
         vertical-align: top;
@@ -439,6 +442,8 @@
           color: rbga(255,255,255,1);
           margin-top: 3px;
           margin-bottom: 5px;
+          padding-top: 7px;
+          margin-left: 8px;
         }
 
         .post-date{
@@ -508,6 +513,7 @@
       font-size: 2rem;
       border: none;
       border-bottom: 1px solid $darkgray;
+      margin-top: 5px;
       margin-bottom: 20px;
       font-weight: 100;
       color: $darkgray;
@@ -628,11 +634,15 @@
         display: inline-block;
         background: url("https://s-ec.bstatic.com/images/hotel/max1024x768/180/180198842.jpg") no-repeat center center;
         background-size: cover;
-        margin-left: -20px;
+        // margin-left: -20px;
+        margin-left: -7px;
       }
       .user-details{
-        vertical-align: top;
-        display: inline-block;
+        // vertical-align: top;
+        display: flex;
+        // align-items: center;
+        // margin-left: 7px;
+        // justify-content: center;
 
 
         .user-name{
@@ -642,6 +652,8 @@
           color: rbga(255,255,255,1);
           margin-top: 3px;
           margin-bottom: 5px;
+          padding-top: 7px;
+          margin-left: 8px;
         }
 
         .post-date{
@@ -651,7 +663,8 @@
         }
       }
       .listing-details{
-        margin-top: 20px;
+        // margin-top: 20px;
+        margin-top: 12px;
         margin-bottom: 10px;
         .fas{
           display: inline-block;
@@ -793,6 +806,7 @@
       height: 40px;
       width: 120px;
       margin-right: 5px;
+      margin-left: 0px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -909,14 +923,14 @@
 
     h1{
       // background: red;
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
       font-size: 27px;
       font-weight: bold;
       padding-bottom: 10px;
     }
     p {
       color: $darkgray;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
     }
   }
   .footer-btn-container {
@@ -1084,4 +1098,5 @@ input[type=checkbox] {
 a {
   text-decoration: none;
   color: $darkgray;
+  margin-left: 5px;
 }
